@@ -8,6 +8,9 @@ public class AttackBuilding : MonoBehaviour
     public Animator animator;
     public float fireForce;
     public float fireRate;
+
+    public Transform projectileParent;
+
    
 
     bool inRange = false;
@@ -15,7 +18,7 @@ public class AttackBuilding : MonoBehaviour
     float reloadDelay;
     public void Start()
     {
-        animator = Weapon.GetComponent<Animator>();
+        
     }
 
 
@@ -41,7 +44,7 @@ public class AttackBuilding : MonoBehaviour
         }
     }
     public void CreateProjectile() {
-        GameObject projectile = Instantiate(ProjectilePreFab.gameObject, new Vector3(SpawnPoint.position.x, SpawnPoint.position.y, SpawnPoint.position.z), Weapon.transform.rotation);
+        GameObject projectile = Instantiate(ProjectilePreFab.gameObject, new Vector3(SpawnPoint.position.x, SpawnPoint.position.y, SpawnPoint.position.z), Weapon.transform.rotation, projectileParent);
        
         projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * fireForce, ForceMode.Impulse);
         
@@ -111,5 +114,7 @@ public class AttackBuilding : MonoBehaviour
 
         return new Vector3(theta, phi, 0);
     }
+
+   
 
 }
