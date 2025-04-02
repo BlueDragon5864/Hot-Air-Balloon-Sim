@@ -136,7 +136,7 @@ Transform:
   m_GameObject: {fileID: 424447664569464877}
   serializedVersion: 2
   m_LocalRotation: {x: 0.024184324, y: 0.92356294, z: 0.010017474, w: 0.38255227}
-  m_LocalPosition: {x: -3.15, y: 0.00002670288, z: -3.15}
+  m_LocalPosition: {x: -3.15, y: 0, z: -3.15}
   m_LocalScale: {x: 0.5, y: 15, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -805,9 +805,10 @@ MonoBehaviour:
   Weapon: {fileID: 7399952590944003568}
   SpawnPoint: {fileID: 3130798331911195449}
   ProjectilePreFab: {fileID: 6238834537949739373, guid: 74c6574436e5da243acedc32f4b97df6, type: 3}
-  animator: {fileID: 4054819185389561615}
+  animator: {fileID: 3674231044127751522}
   fireForce: 130
   fireRate: 60
+  projectileParent: {fileID: 0}
 --- !u!135 &4453772488208879119
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3206,7 +3207,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7365754505313331650, guid: c1e9830786552fa4591338fce473abc7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3214,11 +3216,6 @@ PrefabInstance:
 --- !u!4 &3130798331911195449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8434998407340852724, guid: c1e9830786552fa4591338fce473abc7, type: 3}
-  m_PrefabInstance: {fileID: 6808868840269303501}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4054819185389561615 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7365754505313331650, guid: c1e9830786552fa4591338fce473abc7, type: 3}
   m_PrefabInstance: {fileID: 6808868840269303501}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6190548828807022024 stripped
