@@ -2154,12 +2154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e749d4109c3e64dad5f640bf4e7d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  destroyed: 1
+  animator: {fileID: 4659774693669434661}
   Weapon: {fileID: 2089991409758696933}
   SpawnPoint: {fileID: 4801260744014458930}
   ProjectilePreFab: {fileID: 7765285539324625072, guid: 5bf2bd2c5887dba46a2c3dc412030d4e, type: 3}
-  animator: {fileID: 4659774693669434661}
   fireForce: 100
   fireRate: 60
+  projectileParent: {fileID: 0}
 --- !u!1 &7619404413574941703
 GameObject:
   m_ObjectHideFlags: 0
