@@ -8,13 +8,17 @@ public class BalloonController : MonoBehaviour
     public float maxAltitude, minAltitude;
     public float ascendRate, descendRate;
     public float xSpeed, zSpeed;
+    public float speed = 0.0001f;
 
     private BallastController[] ballasts;
+    private Rigidbody rb;
 
     void Start()
     {
         // Find all ballast GameObjects and get their BallastController components
         ballasts = FindObjectsByType<BallastController>(FindObjectsSortMode.InstanceID);
+
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -31,7 +35,7 @@ public class BalloonController : MonoBehaviour
         // Update the balloon's altitude based on the total ballast mass
 
         // Update the balloon's position and rotation to simulate the movement
-        transform.position = new Vector3(transform.position.x + xSpeed, currentAltitude, transform.position.z + zSpeed);
+        rb.linearVelocity = new Vector3(xSpeed * speed, 0, zSpeed * speed);
 
         // Update the flame's intensity based on the balloon's ascent/descent rate
         UpdateFlameIntensity();
