@@ -12,6 +12,7 @@ public class FirstPersonCameraController : MonoBehaviour
     private BalloonController balloonController;
     private List<BallastController> ballastControllers;
 
+    public float farAway = 3f;
     public float headHeight = 5;
 
     private float yaw = 0f; // Yaw rotation
@@ -63,7 +64,7 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // Cast a ray from the camera to detect if the player is looking at the flame or ballasts
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward * 10f, out hit))
+        if (Physics.Raycast(transform.position + transform.forward, transform.forward * 5f, out hit))
         {
             if (hit.collider.gameObject == balloon.transform.Find("Flame").gameObject)
             {
@@ -71,12 +72,7 @@ public class FirstPersonCameraController : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     // Increase the flame's intensity
-                    balloonController.IncreaseFlameIntensity();
-                }
-                else if (Input.GetMouseButtonDown(1))
-                {
-                    // Decrease the flame's intensity
-                    balloonController.DecreaseFlameIntensity();
+                    balloonController.UpdateFlameIntensity();
                 }
             }
             else
@@ -102,6 +98,6 @@ public class FirstPersonCameraController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, transform.forward * 5f);
+        Gizmos.DrawRay(transform.position + transform.forward, transform.forward * 5f);
     }
 }

@@ -1,14 +1,12 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 // Balloon Script
 public class BalloonController : MonoBehaviour
 {
-    public float currentAltitude;
     public float maxAltitude, minAltitude;
-    public float ascendRate, descendRate;
     public float xSpeed, zSpeed;
     public float speed = 0.0001f;
+    public float flameIntensity = 0.5f;
 
     private BallastController[] ballasts;
     private Rigidbody rb;
@@ -21,10 +19,11 @@ public class BalloonController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Update the balloon's position and rotation based on the ballast changes
         UpdateBalloonMovement();
+        // if ( flameIntensity > 0f ) flameIntensity -= 0.0001f;
     }
 
     public void UpdateBalloonMovement()
@@ -35,10 +34,8 @@ public class BalloonController : MonoBehaviour
         // Update the balloon's altitude based on the total ballast mass
 
         // Update the balloon's position and rotation to simulate the movement
-        rb.linearVelocity = new Vector3(xSpeed * speed, 0, zSpeed * speed);
+        rb.linearVelocity = new Vector3(xSpeed * speed, (flameIntensity - 0.5f), zSpeed * speed);
 
-        // Update the flame's intensity based on the balloon's ascent/descent rate
-        UpdateFlameIntensity();
     }
 
     void GetTotalBallastMass()
@@ -52,36 +49,8 @@ public class BalloonController : MonoBehaviour
             }
         }
     }
-
-    public GameObject flame;
-
-    void UpdateFlameIntensity()
+    public void UpdateFlameIntensity()
     {
-        // Adjust the flame's scale and particle emission rate based on the balloon's ascent/descent rate
-        float flameScale = Mathf.Clamp(Mathf.Abs(currentAltitude - transform.position.y) * 0.1f, 0.5f, 2f);
-        flame.transform.localScale = new Vector3(flameScale, flameScale, flameScale);
-
-        var emission = flame.GetComponent<ParticleSystem>().emission;
-        emission.rateOverTime = Mathf.Clamp(Mathf.Abs(currentAltitude - transform.position.y) * 10f, 10f, 50f);
-    }
-
-    public void IncreaseFlameIntensity()
-    {
-        // Increase the flame's scale and particle emission rate
-        float flameScale = Mathf.Clamp(flame.transform.localScale.x + 0.1f, 0.5f, 2f);
-        flame.transform.localScale = new Vector3(flameScale, flameScale, flameScale);
-
-        var emission = flame.GetComponent<ParticleSystem>().emission;
-        emission.rateOverTime = Mathf.Clamp(emission.rateOverTime.constant + 5f, 10f, 50f);
-    }
-
-    public void DecreaseFlameIntensity()
-    {
-        // Decrease the flame's scale and particle emission rate
-        float flameScale = Mathf.Clamp(flame.transform.localScale.x - 0.1f, 0.5f, 2f);
-        flame.transform.localScale = new Vector3(flameScale, flameScale, flameScale);
-
-        var emission = flame.GetComponent<ParticleSystem>().emission;
-        emission.rateOverTime = Mathf.Clamp(emission.rateOverTime.constant - 5f, 10f, 50f);
+        flameIntensity += (1f - flameIntensity) / 2f;
     }
 }
