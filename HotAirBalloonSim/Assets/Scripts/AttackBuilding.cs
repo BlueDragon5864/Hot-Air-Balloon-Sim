@@ -18,7 +18,7 @@ public class AttackBuilding : Building
     float reloadDelay;
     public void Start()
     {
-        
+        projectileParent = GameObject.Find("Projectiles").transform;
     }
 
 
