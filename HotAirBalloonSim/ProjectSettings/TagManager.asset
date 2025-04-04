@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Building
   - Balloon
+  - Bomb
   layers:
   - Default
   - TransparentFX

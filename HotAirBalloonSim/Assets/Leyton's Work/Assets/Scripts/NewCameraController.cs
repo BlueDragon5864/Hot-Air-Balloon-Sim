@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 public class FirstPersonCameraController : MonoBehaviour
 {
+    public GameObject bombPrefab;
     public Transform player; // Reference to the player's transform
     public float mouseSensitivity = 2f; // Sensitivity of the mouse movement
     public float verticalLookLimit = 80f; // Limit for vertical look
+    public float shootForce = 10f;
 
     public GameObject balloon;
     public List<GameObject> ballasts;
@@ -56,6 +58,15 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Position the camera at the player's position
         transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
+
+        if ( Input.GetMouseButtonDown(1) )
+        {
+            // Instantiate a new sphere object
+            GameObject sphere = Instantiate(bombPrefab, transform.position, transform.rotation);
+
+            // Add a force to the sphere to make it move
+            sphere.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce, ForceMode.Impulse);
+        }
 
         CheckForInteraction();
     }
