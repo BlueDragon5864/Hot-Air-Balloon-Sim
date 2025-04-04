@@ -16,4 +16,12 @@ public class Building : MonoBehaviour
             animator.Play("Destruction");
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bomb")) {
+            Destroy(collision.gameObject);
+            health -= 20;
+        }
+    }
 }
