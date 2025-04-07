@@ -387,7 +387,7 @@ MonoBehaviour:
   player: {fileID: 2022929247}
   mouseSensitivity: 4
   verticalLookLimit: 80
-  shootForce: 10
+  shootForce: 30
   balloon: {fileID: 4676778425849944647}
   ballasts:
   - {fileID: 4276149109550524653}
@@ -920,9 +920,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   gravity: 20
-  superFastMode: 0
+  superFastMode: 1
   maxVelocity: 3
-  canFly: 0
+  canFly: 1
   lowBoundary: 0
   respawn: {fileID: 2146882776}
 --- !u!222 &2022929250
