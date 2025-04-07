@@ -2101,6 +2101,7 @@ GameObject:
   - component: {fileID: 6696507937373687178}
   - component: {fileID: 5007304212182927055}
   - component: {fileID: 2872576641310565589}
+  - component: {fileID: 7718820994339204841}
   m_Layer: 0
   m_Name: Archer Tower
   m_TagString: Building
@@ -7003,6 +7004,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crossbow: {fileID: 2089991409758696933}
   animator: {fileID: 0}
+--- !u!54 &7718820994339204841
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169434899122239675}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7619404413574941703
 GameObject:
   m_ObjectHideFlags: 0
@@ -8043,15 +8071,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46bd11b0f631fac459c6042c45efe3eb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46bd11b0f631fac459c6042c45efe3eb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46bd11b0f631fac459c6042c45efe3eb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46bd11b0f631fac459c6042c45efe3eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

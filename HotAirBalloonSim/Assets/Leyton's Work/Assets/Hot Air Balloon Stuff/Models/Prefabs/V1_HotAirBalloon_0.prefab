@@ -5261,7 +5261,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8460454644399738717, guid: 672fed9e67757c24883111c2c15368bc, type: 3}
 --- !u!1 &2528481174399832896
@@ -5847,6 +5847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076717627030934219}
   - component: {fileID: 106540300927763574}
+  - component: {fileID: 673255977742045126}
   m_Layer: 0
   m_Name: V1_HotAirBalloon_0
   m_TagString: Balloon
@@ -5891,14 +5892,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9815c9515de2b924cb8bf96df43d7510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAltitude: 30
   maxAltitude: 200
   minAltitude: 10
-  ascendRate: 0
-  descendRate: 0
   xSpeed: 0
   zSpeed: 0
-  flame: {fileID: 290848165989385552}
+  speed: 0.0001
+  flameIntensity: 0.5
+--- !u!54 &673255977742045126
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534612148462883475}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &3380927976776767782
 PrefabInstance:
   m_ObjectHideFlags: 0
