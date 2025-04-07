@@ -25,6 +25,11 @@ public class FirstPersonCameraController : MonoBehaviour
         // currentTarget = balloon;
         balloonController = balloon.GetComponent<BalloonController>();
 
+        foreach (GameObject b in ballasts)
+        {
+            ballastControllers.Add(b.GetComponent<BallastController>());
+        }
+
         // Make sure the player is assigned
         if (player == null)
         {
