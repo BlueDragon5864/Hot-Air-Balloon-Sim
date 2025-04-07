@@ -946,6 +946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 661760219209207498, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
     - target: {fileID: 4225887962922311967, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -989,6 +993,10 @@ PrefabInstance:
     - target: {fileID: 7457532907495712354, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: m_Name
       value: Hot Air Balloon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: minAltitude
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
