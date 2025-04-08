@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class FirstPersonCameraController : MonoBehaviour
 {
     public GameObject bombPrefab;
+    public GameObject Flame;
     public Transform player; // Reference to the player's transform
     public float mouseSensitivity = 2f; // Sensitivity of the mouse movement
     public float verticalLookLimit = 80f; // Limit for vertical look
@@ -82,7 +83,7 @@ public class FirstPersonCameraController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + transform.forward, transform.forward * 5f, out hit))
         {
-            if (hit.collider.gameObject == balloon.transform.Find("Flame").gameObject)
+            if (hit.collider.gameObject == Flame)
             {
                 // Player is looking at the flame
                 if (Input.GetMouseButtonDown(0))

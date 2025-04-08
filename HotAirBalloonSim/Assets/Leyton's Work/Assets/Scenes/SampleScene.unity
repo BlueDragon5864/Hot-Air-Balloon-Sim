@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 2200530071484365439, guid: 540715124d82a0944bd0c078b7443560, type: 3}
+  Flame: {fileID: 2047752975}
   player: {fileID: 2022929247}
   mouseSensitivity: 4
   verticalLookLimit: 80
@@ -806,7 +807,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -933,6 +934,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022929242}
   m_CullTransparentMesh: 1
+--- !u!1 &2047752975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8828289265770019241, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+  m_PrefabInstance: {fileID: 7546023394504869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &2047752977
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047752975}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 13.210002
+  m_Center: {x: 0, y: 0, z: 12.500003}
 --- !u!4 &2146882776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7697521947593495297, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
@@ -990,6 +1017,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7373246120338291408, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 7457532907495712354, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: m_Name
       value: Hot Air Balloon
@@ -998,10 +1029,17 @@ PrefabInstance:
       propertyPath: minAltitude
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: flameIntensity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8828289265770019241, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2047752977}
   m_SourcePrefab: {fileID: 100100000, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
 --- !u!1 &1156179009750344812 stripped
 GameObject:

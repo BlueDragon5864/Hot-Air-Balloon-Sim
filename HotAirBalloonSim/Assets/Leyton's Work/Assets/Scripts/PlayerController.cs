@@ -109,7 +109,7 @@ public class PilotController : MonoBehaviour
         */
 
         // Apply gravity
-        rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
+        //rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
     }
 
     private void LimitVelocity()
