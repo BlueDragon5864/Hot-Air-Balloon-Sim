@@ -34,7 +34,7 @@ public class BalloonController : MonoBehaviour
         // Update the balloon's altitude based on the total ballast mass
 
         // Update the balloon's position and rotation to simulate the movement
-        rb.linearVelocity = new Vector3(xSpeed * speed, (flameIntensity - 0.5f), zSpeed * speed);
+        rb.linearVelocity = new Vector3(xSpeed * speed, flameIntensity, zSpeed * speed);
 
     }
 
@@ -51,6 +51,6 @@ public class BalloonController : MonoBehaviour
     }
     public void UpdateFlameIntensity()
     {
-        flameIntensity += (1f - flameIntensity) / 2f;
+        flameIntensity += (1f - flameIntensity) * 2f;
     }
 }
