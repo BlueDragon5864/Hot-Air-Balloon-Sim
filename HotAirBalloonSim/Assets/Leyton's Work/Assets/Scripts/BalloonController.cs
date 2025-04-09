@@ -7,6 +7,8 @@ public class BalloonController : MonoBehaviour
     public float xSpeed, zSpeed;
     public float speed = 0.0001f;
     public float flameIntensity = 0.5f;
+    public float forceStrength;
+    public float gravity = 0.5f;
 
     private BallastController[] ballasts;
     private Rigidbody rb;
@@ -34,8 +36,8 @@ public class BalloonController : MonoBehaviour
         // Update the balloon's altitude based on the total ballast mass
 
         // Update the balloon's position and rotation to simulate the movement
-        rb.linearVelocity = new Vector3(xSpeed * speed, flameIntensity, zSpeed * speed);
-
+        rb.AddForce(new Vector3(0, flameIntensity * Mathf.Exp(forceStrength), 0));
+        rb.AddForce(new Vector3(0, -1f * gravity * Mathf.Exp(forceStrength), 0));
     }
 
     void GetTotalBallastMass()

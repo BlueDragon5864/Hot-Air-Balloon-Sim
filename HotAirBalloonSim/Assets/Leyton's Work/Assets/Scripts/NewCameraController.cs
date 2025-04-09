@@ -5,6 +5,7 @@ public class FirstPersonCameraController : MonoBehaviour
 {
     public GameObject bombPrefab;
     public GameObject Flame;
+    public GameObject Envelope;
     public Transform player; // Reference to the player's transform
     public float mouseSensitivity = 2f; // Sensitivity of the mouse movement
     public float verticalLookLimit = 80f; // Limit for vertical look
@@ -26,9 +27,9 @@ public class FirstPersonCameraController : MonoBehaviour
         // currentTarget = balloon;
         balloonController = balloon.GetComponent<BalloonController>();
 
-        foreach (GameObject b in ballasts)
+        // foreach (GameObject b in ballasts)
         {
-            ballastControllers.Add(b.GetComponent<BallastController>());
+            // ballastControllers.Add(b.GetComponent<BallastController>());
         }
 
         // Make sure the player is assigned
@@ -81,9 +82,10 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // Cast a ray from the camera to detect if the player is looking at the flame or ballasts
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + transform.forward, transform.forward * 5f, out hit))
+        if (Physics.Raycast(transform.position + transform.forward * 0.5f, transform.forward * 5f, out hit))
         {
-            if (hit.collider.gameObject == Flame)
+            Debug.Log(hit.collider.gameObject);
+            if (hit.collider.gameObject == Flame || hit.collider.gameObject == Envelope)
             {
                 // Player is looking at the flame
                 if (Input.GetMouseButtonDown(0))
@@ -103,7 +105,7 @@ public class FirstPersonCameraController : MonoBehaviour
                         if (Input.GetMouseButtonDown(0))
                         {
                             // Add ballast
-                            ballastControllers[i].ToggleBallast();
+                            // ballastControllers[i].ToggleBallast();
                         }
                         break;
                     }
