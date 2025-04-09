@@ -769,6 +769,7 @@ GameObject:
   - component: {fileID: 6925079042352308408}
   - component: {fileID: 8529742320796147105}
   - component: {fileID: 6867365925957242365}
+  - component: {fileID: -6880990575433858611}
   m_Layer: 0
   m_Name: CannonTower
   m_TagString: Building
@@ -833,7 +834,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 200
+  m_Radius: 100
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &3674231044127751522
 Animator:
@@ -5684,6 +5685,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!136 &-6880990575433858611
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2704604748305579353}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 100
+  m_Height: 600
+  m_Direction: 1
+  m_Center: {x: 0, y: 24.630005, z: -0.0000038146973}
 --- !u!1 &2871755617772034973
 GameObject:
   m_ObjectHideFlags: 0
