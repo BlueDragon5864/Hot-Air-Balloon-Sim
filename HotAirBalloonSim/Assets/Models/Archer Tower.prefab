@@ -2145,7 +2145,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 100
+  m_Radius: 200
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3665101819721632686
 MonoBehaviour:
@@ -2165,8 +2165,8 @@ MonoBehaviour:
   Weapon: {fileID: 2089991409758696933}
   SpawnPoint: {fileID: 4801260744014458930}
   ProjectilePreFab: {fileID: 7765285539324625072, guid: 5bf2bd2c5887dba46a2c3dc412030d4e, type: 3}
-  fireForce: 100
-  fireRate: 60
+  fireForce: 200
+  fireRate: 100
   projectileParent: {fileID: 0}
 --- !u!95 &6948478318382909630
 Animator:
