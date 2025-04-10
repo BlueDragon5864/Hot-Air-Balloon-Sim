@@ -114,8 +114,8 @@ Transform:
   m_GameObject: {fileID: 597497727920939428}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.31, y: -2, z: 0}
-  m_LocalScale: {x: 0.2, y: 1, z: 4}
+  m_LocalPosition: {x: 3.5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4225887962922311967}
@@ -192,7 +192,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 1, z: 1}
+  m_Size: {x: 0.1, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &639113223872619341
 GameObject:
@@ -222,8 +222,8 @@ Transform:
   m_GameObject: {fileID: 639113223872619341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -2, z: 2.329}
-  m_LocalScale: {x: 0.2, y: 1, z: 4}
+  m_LocalPosition: {x: 0, y: -2, z: 3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4225887962922311967}
@@ -300,7 +300,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 1, z: 1}
+  m_Size: {x: 0.1, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1791004323857029590
 GameObject:
@@ -330,8 +330,8 @@ Transform:
   m_GameObject: {fileID: 1791004323857029590}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.41, z: 0}
-  m_LocalScale: {x: 4, y: 0.5, z: 4}
+  m_LocalPosition: {x: 0, y: -2.87, z: 0}
+  m_LocalScale: {x: 7.9176, y: 0.5, z: 7.3348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4225887962922311967}
@@ -438,8 +438,8 @@ Transform:
   m_GameObject: {fileID: 3312693234320442586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.32, y: -2, z: 0}
-  m_LocalScale: {x: 0.2, y: 1, z: 4}
+  m_LocalPosition: {x: -3.5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4225887962922311967}
@@ -516,7 +516,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 1, z: 1}
+  m_Size: {x: 0.1, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4443843868034360768
 GameObject:
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 7252442198467963184}
   - component: {fileID: 4743540997767712504}
   - component: {fileID: 9174925657189441909}
-  - component: {fileID: 7448382970951490222}
+  - component: {fileID: 4755899843286917905}
   m_Layer: 0
   m_Name: Envelope
   m_TagString: Balloon
@@ -606,8 +606,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7448382970951490222
-SphereCollider:
+--- !u!65 &4755899843286917905
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -625,8 +625,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.54
-  m_Center: {x: 0, y: 7.948999, z: 0.0000042915344}
+  m_Size: {x: 9.451424, y: 12.531462, z: 9.179062}
+  m_Center: {x: 0.010654449, y: 9.734267, z: 0.08809662}
 --- !u!1 &4823028841150681523
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.21871, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4225887962922311967}
@@ -882,8 +882,8 @@ Transform:
   m_GameObject: {fileID: 7354538692003727926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -2, z: -2.37}
-  m_LocalScale: {x: 0.2, y: 1, z: 4}
+  m_LocalPosition: {x: 0, y: -2, z: -3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4225887962922311967}
@@ -960,7 +960,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 1, z: 1}
+  m_Size: {x: 0.1, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7457532907495712354
 GameObject:
