@@ -28,7 +28,8 @@ public class PilotController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = (cameraForward * vertical) + (cameraRight * horizontal);
-        
+        if (!superFastMode) LimitVelocity();
+
         rb.AddForce(movement * moveSpeed, ForceMode.Impulse);
         rb.AddForce(new Vector3(0, -1f * gravity, 0));
         
@@ -57,5 +58,18 @@ public class PilotController : MonoBehaviour
         cameraRight.Normalize();
         
     }
-    
+
+    private void LimitVelocity()
+    {
+        Vector3 velocity = rb.linearVelocity;
+        float verticalVelocity = velocity.y;
+        float horizontalVelocity = new Vector3(velocity.x, 0f, velocity.z).magnitude;
+        velocity.y = 0.0f;
+        if (horizontalVelocity > maxVelocity)
+        {
+            velocity *= (maxVelocity / horizontalVelocity);
+            velocity.y = verticalVelocity;
+            rb.linearVelocity = velocity;
+        }
+    }
 }

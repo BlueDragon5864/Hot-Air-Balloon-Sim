@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 2200530071484365439, guid: 540715124d82a0944bd0c078b7443560, type: 3}
   Flame: {fileID: 2047752975}
+  Envelope: {fileID: 585436566}
   player: {fileID: 2022929247}
   mouseSensitivity: 4
   verticalLookLimit: 80
@@ -526,6 +527,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &585436566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4443843868034360768, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+  m_PrefabInstance: {fileID: 7546023394504869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &780141279
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,6 +983,14 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 0.0000001
       objectReference: {fileID: 0}
+    - target: {fileID: 661760219209207498, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 661760219209207498, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4225887962922311967, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1028,6 +1042,10 @@ PrefabInstance:
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: minAltitude
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: forceStrength
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: flameIntensity
