@@ -4,9 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class PilotController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = -5f;
     public float gravity = 1f;
-    public bool superFastMode = false;
     public float maxVelocity = 10f; 
     public bool canFly = false;
     public float lowBoundary = 0.0f;
@@ -28,18 +27,18 @@ public class PilotController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = (cameraForward * vertical) + (cameraRight * horizontal);
-        if (!superFastMode) LimitVelocity();
+        LimitVelocity();
 
-        rb.AddForce(movement * moveSpeed, ForceMode.Impulse);
+        rb.AddForce(movement * Mathf.Exp(moveSpeed), ForceMode.Impulse);
         rb.AddForce(new Vector3(0, -1f * gravity, 0));
         
-        if(this.transform.position.y < lowBoundary)
+        /*if(this.transform.position.y < lowBoundary)
         {
             this.transform.position = respawn.position;
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             
-        }
+        }*/
     }
 
     void Update()

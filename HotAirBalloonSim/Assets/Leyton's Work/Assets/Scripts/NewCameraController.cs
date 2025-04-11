@@ -94,23 +94,7 @@ public class FirstPersonCameraController : MonoBehaviour
                     balloonController.UpdateFlameIntensity();
                 }
             }
-            else
-            {
-                // Check if the player is looking at a ballast
-                for (int i = 0; i < ballasts.Count; i++)
-                {
-                    if (hit.collider.gameObject == ballasts[i])
-                    {
-                        // Player is looking at a ballast
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            // Add ballast
-                            // ballastControllers[i].ToggleBallast();
-                        }
-                        break;
-                    }
-                }
-            }
+            
         }
     }
 
