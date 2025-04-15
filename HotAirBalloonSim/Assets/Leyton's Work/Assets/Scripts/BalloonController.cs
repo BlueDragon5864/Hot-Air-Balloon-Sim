@@ -8,6 +8,7 @@ public class BalloonController : MonoBehaviour
     //public float speed = 0.0001f;
     public float flameIntensity = 0.5f;
     public float forceStrength;
+    public float depletionRate;
     public float gravity = -0.5f;
 
     private Rigidbody rb;
@@ -22,9 +23,10 @@ public class BalloonController : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddForce(0f, flameIntensity * Mathf.Exp(forceStrength), 0f);
-        rb.AddForce(0f, gravity * Mathf.Exp(forceStrength), 0f);
+        rb.AddForce(0f, -1f * gravity * Mathf.Exp(forceStrength), 0f);
 
-        if ( flameIntensity > 0f ) flameIntensity -= 0.001f;
+        if ( flameIntensity > 0f ) flameIntensity -= Mathf.Exp(depletionRate);
+        Debug.Log(rb.linearVelocity);
     }
 
     public void UpdateFlameIntensity()

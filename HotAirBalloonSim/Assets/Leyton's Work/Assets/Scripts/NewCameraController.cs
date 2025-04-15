@@ -10,6 +10,8 @@ public class FirstPersonCameraController : MonoBehaviour
     public float mouseSensitivity = 2f; // Sensitivity of the mouse movement
     public float verticalLookLimit = 80f; // Limit for vertical look
     public float shootForce = 10f;
+    public float maxCharge = 20f;
+    private bool charging = false;
 
     public GameObject balloon;
     public List<GameObject> ballasts;
@@ -66,13 +68,22 @@ public class FirstPersonCameraController : MonoBehaviour
         // Position the camera at the player's position
         transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
 
-        if ( Input.GetMouseButtonDown(1) )
+        if (Input.GetMouseButton(1))
+        {
+            shootForce += (maxCharge - shootForce) / 2f;
+            charging = true;
+        }
+        else if (charging)
         {
             // Instantiate a new sphere object
             GameObject sphere = Instantiate(bombPrefab, transform.position, transform.rotation);
 
             // Add a force to the sphere to make it move
             sphere.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce, ForceMode.Impulse);
+
+            shootForce = 10;
+            charging = false;
+
         }
 
         CheckForInteraction();

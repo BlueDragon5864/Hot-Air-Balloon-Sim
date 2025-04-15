@@ -30,7 +30,7 @@ public class PilotController : MonoBehaviour
         LimitVelocity();
 
         rb.AddForce(movement * Mathf.Exp(moveSpeed), ForceMode.Impulse);
-        rb.AddForce(new Vector3(0, -1f * gravity, 0));
+        // rb.AddForce(new Vector3(0, -1f * gravity, 0));
         
         /*if(this.transform.position.y < lowBoundary)
         {
