@@ -86,6 +86,9 @@ public class FirstPersonCameraController : MonoBehaviour
             // Instantiate a new sphere object
             GameObject sphere = Instantiate(bombPrefab, transform.position, transform.rotation);
 
+            //set bomb velocity the balloon velocity
+            sphere.GetComponent<Rigidbody>().linearVelocity = balloon.GetComponent<Rigidbody>().linearVelocity;
+
             // Add a force to the sphere to make it move
             sphere.GetComponent<Rigidbody>().AddForce(transform.forward * (shootForce + charge), ForceMode.Impulse);
 
@@ -104,7 +107,7 @@ public class FirstPersonCameraController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + transform.forward * 0.5f, transform.forward * 5f, out hit))
         {
-            Debug.Log(hit.collider.gameObject);
+            
             if (hit.collider.gameObject == Flame || hit.collider.gameObject == Envelope)
             {
                 // Player is looking at the flame

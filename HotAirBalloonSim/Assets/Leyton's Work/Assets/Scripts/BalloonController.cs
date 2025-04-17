@@ -28,7 +28,7 @@ public class BalloonController : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, - 1f * terminalVelocity, rb.linearVelocity.z);
 
         if ( flameIntensity > 0f ) flameIntensity -= Mathf.Exp(depletionRate);
-        Debug.Log(rb.linearVelocity);
+        
     }
 
     public void UpdateFlameIntensity()

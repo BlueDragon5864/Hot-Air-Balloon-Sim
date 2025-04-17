@@ -812,8 +812,8 @@ MonoBehaviour:
   Weapon: {fileID: 7399952590944003568}
   SpawnPoint: {fileID: 3130798331911195449}
   ProjectilePreFab: {fileID: 6238834537949739373, guid: 74c6574436e5da243acedc32f4b97df6, type: 3}
-  fireForce: 250
-  fireRate: 150
+  fireForce: 70
+  fireRate: 300
   projectileParent: {fileID: 0}
 --- !u!135 &4453772488208879119
 SphereCollider:
