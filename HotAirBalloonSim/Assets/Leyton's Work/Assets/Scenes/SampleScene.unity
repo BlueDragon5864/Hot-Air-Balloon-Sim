@@ -389,8 +389,9 @@ MonoBehaviour:
   player: {fileID: 0}
   mouseSensitivity: 4
   verticalLookLimit: 80
-  shootForce: 10
-  maxCharge: 20
+  shootForce: 20
+  maxCharge: 70
+  chargeMetronome: 100
   balloon: {fileID: 4676778425849944647}
   ballasts:
   - {fileID: 0}
@@ -820,6 +821,18 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 2544205795360238825, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: gravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544205795360238825, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544205795360238825, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: maxVelocity
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4225887962922311967, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -887,6 +900,10 @@ PrefabInstance:
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: flameIntensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: terminalVelocity
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

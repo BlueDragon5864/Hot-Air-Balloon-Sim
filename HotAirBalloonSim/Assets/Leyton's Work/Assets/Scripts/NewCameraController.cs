@@ -9,9 +9,12 @@ public class FirstPersonCameraController : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float mouseSensitivity = 2f; // Sensitivity of the mouse movement
     public float verticalLookLimit = 80f; // Limit for vertical look
-    public float shootForce = 10f;
+    public float shootForce;
+    private float charge = 0;
     public float maxCharge = 20f;
     private bool charging = false;
+    public int chargeMetronome = 100;
+    private int count = 0;
 
     public GameObject balloon;
     public List<GameObject> ballasts;
@@ -70,7 +73,12 @@ public class FirstPersonCameraController : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            shootForce += (maxCharge - shootForce) / 2f;
+            if (count % chargeMetronome == 0 && count > 0)
+            {
+                charge += (maxCharge - shootForce) / 2f;
+                Debug.Log(shootForce + charge);
+            }
+            count++;
             charging = true;
         }
         else if (charging)
@@ -79,9 +87,10 @@ public class FirstPersonCameraController : MonoBehaviour
             GameObject sphere = Instantiate(bombPrefab, transform.position, transform.rotation);
 
             // Add a force to the sphere to make it move
-            sphere.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce, ForceMode.Impulse);
+            sphere.GetComponent<Rigidbody>().AddForce(transform.forward * (shootForce + charge), ForceMode.Impulse);
 
-            shootForce = 10;
+            charge = 0;
+            count = 0;
             charging = false;
 
         }
