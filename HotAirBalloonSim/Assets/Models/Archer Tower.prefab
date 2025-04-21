@@ -2095,7 +2095,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7798212335488351650}
-  - component: {fileID: 472303038196904399}
   - component: {fileID: 3665101819721632686}
   - component: {fileID: 6948478318382909630}
   - component: {fileID: 6696507937373687178}
@@ -2103,6 +2102,7 @@ GameObject:
   - component: {fileID: 2872576641310565589}
   - component: {fileID: 7718820994339204841}
   - component: {fileID: 5030058429889631568}
+  - component: {fileID: 7792708545403737938}
   m_Layer: 0
   m_Name: Archer Tower
   m_TagString: Building
@@ -2127,27 +2127,6 @@ Transform:
   - {fileID: 1606365261126479711}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!135 &472303038196904399
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7169434899122239675}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 100
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3665101819721632686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7055,6 +7034,27 @@ CapsuleCollider:
   m_Height: 600
   m_Direction: 1
   m_Center: {x: 0, y: 24.630005, z: -0.0000038146973}
+--- !u!65 &7792708545403737938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169434899122239675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.8, y: 21.38, z: 10}
+  m_Center: {x: 0, y: 2, z: -0.0000038146973}
 --- !u!1 &7619404413574941703
 GameObject:
   m_ObjectHideFlags: 0

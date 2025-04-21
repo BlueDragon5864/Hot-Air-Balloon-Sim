@@ -75,8 +75,8 @@ public class FirstPersonCameraController : MonoBehaviour
         {
             if (count % chargeMetronome == 0 && count > 0)
             {
-                charge += (maxCharge - shootForce) / 2f;
-                Debug.Log(shootForce + charge);
+                charge += (maxCharge - shootForce - charge) / 2f;
+                
             }
             count++;
             charging = true;
