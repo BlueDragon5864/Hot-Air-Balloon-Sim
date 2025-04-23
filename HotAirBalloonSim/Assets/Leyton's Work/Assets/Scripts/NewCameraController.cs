@@ -74,6 +74,12 @@ public class FirstPersonCameraController : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
+            if (charge < 1) {
+                handBomb.Play("ChargeBomb");
+                charge = 1;
+            }
+            
+           
             if (count % chargeMetronome == 0 && count > 0)
             {
                 charge += shootForce;
@@ -84,13 +90,11 @@ public class FirstPersonCameraController : MonoBehaviour
             }
             count++;
             charging = true;
-            if (charge > maxCharge)
-            {
-                handBomb.Play("ChargeBomb");
-            }
-            else {
-                handBomb.Play("ChargedBomb");
-            }
+            
+            
+            
+                
+            
         }
         else if (charging)
         {
