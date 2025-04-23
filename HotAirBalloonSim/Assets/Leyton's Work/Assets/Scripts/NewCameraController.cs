@@ -14,6 +14,7 @@ public class FirstPersonCameraController : MonoBehaviour
     public float maxCharge = 20f;
     private bool charging = false;
     public int chargeMetronome = 100;
+    public Animator handBomb;
     private int count = 0;
 
     public GameObject balloon;
@@ -31,7 +32,7 @@ public class FirstPersonCameraController : MonoBehaviour
     {
         // currentTarget = balloon;
         balloonController = balloon.GetComponent<BalloonController>();
-
+        
         // foreach (GameObject b in ballasts)
         {
             // ballastControllers.Add(b.GetComponent<BallastController>());
@@ -75,11 +76,21 @@ public class FirstPersonCameraController : MonoBehaviour
         {
             if (count % chargeMetronome == 0 && count > 0)
             {
-                charge += (maxCharge - shootForce - charge) / 2f;
+                charge += shootForce;
+                if (charge > maxCharge) {
+                    charge = maxCharge;
+                }
                 
             }
             count++;
             charging = true;
+            if (charge > maxCharge)
+            {
+                handBomb.Play("ChargeBomb");
+            }
+            else {
+                handBomb.Play("ChargedBomb");
+            }
         }
         else if (charging)
         {
@@ -95,9 +106,10 @@ public class FirstPersonCameraController : MonoBehaviour
             charge = 0;
             count = 0;
             charging = false;
+            handBomb.Play("Idle");
 
         }
-
+        
         CheckForInteraction();
     }
 
