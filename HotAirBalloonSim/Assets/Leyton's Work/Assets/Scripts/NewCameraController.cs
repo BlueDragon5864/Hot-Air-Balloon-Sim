@@ -15,6 +15,7 @@ public class FirstPersonCameraController : MonoBehaviour
     private bool charging = false;
     public int chargeMetronome = 100;
     public Animator handBomb;
+    public Animator leaf;
     private int count = 0;
 
     public GameObject balloon;
@@ -131,6 +132,7 @@ public class FirstPersonCameraController : MonoBehaviour
                 {
                     // Increase the flame's intensity
                     balloonController.UpdateFlameIntensity();
+                    leaf.Play("fan");
                 }
             }
             
