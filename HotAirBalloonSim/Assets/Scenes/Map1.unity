@@ -881,8 +881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.25, y: 0.75}
+  m_AnchoredPosition: {x: 0.0625, y: 0.18953705}
+  m_SizeDelta: {x: -0.125, y: 0.3709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &378714478
 MonoBehaviour:
@@ -1651,6 +1651,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7798212335488351650, guid: 79bacc9dc696b71449798535d78acce7, type: 3}
   m_PrefabInstance: {fileID: 155668726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &925326544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 925326545}
+  - component: {fileID: 925326547}
+  - component: {fileID: 925326546}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &925326545
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925326544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1832819471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00000095367, y: -157.25}
+  m_SizeDelta: {x: 67.136, y: 67.1361}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &925326546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925326544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f0f01286b69edcd42b3b54b8137d7da1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &925326547
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925326544}
+  m_CullTransparentMesh: 1
 --- !u!1 &936632263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,8 +3660,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1832819471}
   - component: {fileID: 1832819472}
+  - component: {fileID: 1832819473}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: HeatBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3606,12 +3682,13 @@ RectTransform:
   m_Children:
   - {fileID: 1684475011}
   - {fileID: 378714477}
+  - {fileID: 925326545}
   m_Father: {fileID: 95320734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 43.75, y: 168.75}
+  m_AnchoredPosition: {x: -463.13885, y: 113.838135}
+  m_SizeDelta: {x: 41.4723, y: 247.3721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832819472
 MonoBehaviour:
@@ -3664,6 +3741,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1832819473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832819470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4462e77480e7a478fed631014f6ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1832819472}
 --- !u!4 &1842180836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5103544737988475984, guid: e9f6ec5ae58472a41aac3c7a0b389562, type: 3}
@@ -3766,6 +3856,10 @@ PrefabInstance:
       value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
+      propertyPath: heatBar
+      value: 
+      objectReference: {fileID: 1832819473}
+    - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: minAltitude
       value: 30
       objectReference: {fileID: 0}
@@ -3775,11 +3869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: forceStrength
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: flameIntensity
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 9091340262951597596, guid: a83b4c0161f0f3c4e8d767986aa55625, type: 3}
       propertyPath: terminalVelocity
