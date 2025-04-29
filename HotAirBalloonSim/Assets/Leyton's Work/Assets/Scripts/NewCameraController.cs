@@ -14,9 +14,13 @@ public class FirstPersonCameraController : MonoBehaviour
     public float maxCharge = 20f;
     private bool charging = false;
     public int chargeMetronome = 100;
+    public float chargeIncreaseRate;
+    public int throwDelay;
+    private int delay;
     public Animator handBomb;
     public Animator leaf;
     private int count = 0;
+
 
     public GameObject balloon;
     public List<GameObject> ballasts;
@@ -54,7 +58,7 @@ public class FirstPersonCameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Get the mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -73,28 +77,30 @@ public class FirstPersonCameraController : MonoBehaviour
         // Position the camera at the player's position
         transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && delay == 0)
         {
+            
             if (charge < 1) {
                 handBomb.Play("ChargeBomb");
                 charge = 1;
             }
             
-           
+            
             if (count % chargeMetronome == 0 && count > 0)
             {
+                /*
                 charge += shootForce;
                 if (charge > maxCharge) {
                     charge = maxCharge;
                 }
-                
+                */
+                charge = Mathf.Pow((charge + 1f) / maxCharge, chargeIncreaseRate) * maxCharge;
+                Debug.Log("Charge: " + charge);
             }
+            
+       
             count++;
             charging = true;
-            
-            
-            
-                
             
         }
         else if (charging)
@@ -112,7 +118,11 @@ public class FirstPersonCameraController : MonoBehaviour
             count = 0;
             charging = false;
             handBomb.Play("Idle");
-
+            delay = throwDelay;
+        }
+        else
+        {
+            if (delay > 0) delay--;
         }
         
         CheckForInteraction();

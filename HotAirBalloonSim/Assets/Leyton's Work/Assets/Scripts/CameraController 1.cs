@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Get the mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
