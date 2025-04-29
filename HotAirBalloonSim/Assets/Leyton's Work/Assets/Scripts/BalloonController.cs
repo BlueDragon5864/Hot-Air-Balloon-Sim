@@ -12,6 +12,8 @@ public class BalloonController : MonoBehaviour
 
     private Rigidbody rb;
 
+    public HeatBar heatBar;
+
     void Start()
     {
         // Find all ballast GameObjects and get their BallastController components
@@ -28,12 +30,14 @@ public class BalloonController : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, - 1f * terminalVelocity, rb.linearVelocity.z);
 
         if ( flameIntensity > 0f ) flameIntensity -= Mathf.Exp(depletionRate);
-        
+        heatBar.SetHealth(flameIntensity);
+
     }
 
     public void UpdateFlameIntensity()
     {
         // flameIntensity += (1f - flameIntensity) / 2f;
         if (flameIntensity > 0f) flameIntensity = Mathf.Sqrt(flameIntensity);
+        heatBar.SetHealth(flameIntensity);
     }
 }
