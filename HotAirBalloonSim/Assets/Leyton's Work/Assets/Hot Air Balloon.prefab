@@ -119,11 +119,11 @@ RectTransform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7697521947593495297}
+  m_Father: {fileID: 4225887962922311967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1.300003}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &4349141957133824959
@@ -219,7 +219,7 @@ MonoBehaviour:
   maxVelocity: 3
   canFly: 1
   lowBoundary: 0
-  respawn: {fileID: 7697521947593495297}
+  respawn: {fileID: 0}
 --- !u!222 &7792009453999031531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -533,38 +533,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7945145240226619603, guid: 12208ef21ce0a1840945d3c0b2e7ede5, type: 3}
---- !u!1 &7060135989099790886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7697521947593495297}
-  m_Layer: 0
-  m_Name: Respawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7697521947593495297
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7060135989099790886}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6699016855453357075}
-  m_Father: {fileID: 4225887962922311967}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7457532907495712354
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +570,7 @@ Transform:
   - {fileID: 99848815391888586}
   - {fileID: 7252442198467963184}
   - {fileID: 7373246120338291408}
-  - {fileID: 7697521947593495297}
+  - {fileID: 6699016855453357075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9091340262951597596
@@ -617,13 +585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9815c9515de2b924cb8bf96df43d7510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAltitude: 200
-  minAltitude: 30
-  xSpeed: 0
-  zSpeed: 0
   flameIntensity: 0
   forceStrength: -10
+  depletionRate: -9
   gravity: 0.5
+  terminalVelocity: 0
+  heatBar: {fileID: 0}
 --- !u!54 &661760219209207498
 Rigidbody:
   m_ObjectHideFlags: 0
