@@ -6,7 +6,7 @@ public class FirstPersonCameraController : MonoBehaviour
     public GameObject bombPrefab;
     public GameObject Flame;
     public GameObject Envelope;
-    public Transform player; // Reference to the player's transform
+    //public Transform player; // Reference to the player's transform
     public float mouseSensitivity = 2f; // Sensitivity of the mouse movement
     public float verticalLookLimit = 80f; // Limit for vertical look
     public float shootForce;
@@ -44,13 +44,13 @@ public class FirstPersonCameraController : MonoBehaviour
         }
 
         // Make sure the player is assigned
-        if (player == null)
+        //if (player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-            if (player == null)
+            //player = GameObject.FindGameObjectWithTag("Player").transform;
+            //if (player == null)
             {
-                Debug.LogError("FirstPersonCameraController: Could not find a game object with the 'Player' tag. Please assign the player transform manually.");
-                enabled = false;
+                //Debug.LogError("FirstPersonCameraController: Could not find a game object with the 'Player' tag. Please assign the player transform manually.");
+                //enabled = false;
             }
         }
 
@@ -75,7 +75,7 @@ public class FirstPersonCameraController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(pitch, yaw, 0f);
 
         // Position the camera at the player's position
-        transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
+        //transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
 
         if (Input.GetMouseButton(1) && delay == 0)
         {
@@ -88,13 +88,13 @@ public class FirstPersonCameraController : MonoBehaviour
             
             if (count % chargeMetronome == 0 && count > 0)
             {
-                /*
+                
                 charge += shootForce;
                 if (charge > maxCharge) {
                     charge = maxCharge;
                 }
-                */
-                charge = Mathf.Pow((charge + 1f) / maxCharge, chargeIncreaseRate) * maxCharge;
+                
+                //charge = Mathf.Pow((charge + 1f) / maxCharge, chargeIncreaseRate) * maxCharge;
                 Debug.Log("Charge: " + charge);
             }
             

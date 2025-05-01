@@ -9,6 +9,7 @@ public class BalloonController : MonoBehaviour
     public float depletionRate = -9;
     public float gravity = -0.5f;
     public float terminalVelocity;
+    public float balloonEfficiency = 1f;
 
     private Rigidbody rb;
 
@@ -28,10 +29,12 @@ public class BalloonController : MonoBehaviour
 
         if (rb.linearVelocity.y < -1f * terminalVelocity)
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, - 1f * terminalVelocity, rb.linearVelocity.z);
+        if (rb.linearVelocity.y > terminalVelocity)
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, terminalVelocity, rb.linearVelocity.z);
 
         if ( flameIntensity > 0f ) flameIntensity -= Mathf.Exp(depletionRate);
         heatBar.SetHealth(flameIntensity);
-
+        balloonEfficiency = (-7f - depletionRate) / 2f;
     }
 
     public void UpdateFlameIntensity()
@@ -39,5 +42,10 @@ public class BalloonController : MonoBehaviour
         // flameIntensity += (1f - flameIntensity) / 2f;
         if (flameIntensity > 0f) flameIntensity = Mathf.Sqrt(flameIntensity);
         heatBar.SetHealth(flameIntensity);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (depletionRate < -7f) depletionRate += 0.1f;
     }
 }
