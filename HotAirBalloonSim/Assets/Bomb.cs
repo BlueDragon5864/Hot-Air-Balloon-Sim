@@ -6,11 +6,12 @@ public class Bomb : MonoBehaviour
     public ParticleSystem fuse;
 
     private bool hasExploded = false;
+    public AudioClip explosionClip;
+    AudioSource sound;
 
     void Start()
     {
-        // Optionally, trigger the explosion immediately
-       
+sound = GetComponent<AudioSource>();       
     }
 
     public void Explode()
@@ -19,6 +20,8 @@ public class Bomb : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         fuse.Stop();
         hasExploded = true;
+        sound.resource = explosionClip; 
+        sound.Play();
 
         foreach (var effect in explosionEffects)
         {
