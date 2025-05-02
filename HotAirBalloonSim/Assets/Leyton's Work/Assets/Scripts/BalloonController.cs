@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Balloon Script
 public class BalloonController : MonoBehaviour
@@ -35,6 +36,8 @@ public class BalloonController : MonoBehaviour
         if ( flameIntensity > 0f ) flameIntensity -= Mathf.Exp(depletionRate);
         heatBar.SetHealth(flameIntensity);
         balloonEfficiency = (-7f - depletionRate) / 2f;
+
+        if (flameIntensity <= 0f) SceneManager.LoadScene("DieScreen");
     }
 
     public void UpdateFlameIntensity()
@@ -46,6 +49,6 @@ public class BalloonController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (depletionRate < -7f) depletionRate += 0.1f;
+        if (depletionRate < -7f && collision.gameObject.CompareTag("Projectile")) depletionRate += 0.1f;
     }
 }
