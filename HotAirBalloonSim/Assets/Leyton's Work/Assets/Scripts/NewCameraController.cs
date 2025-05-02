@@ -95,7 +95,7 @@ public class FirstPersonCameraController : MonoBehaviour
                 }
                 
                 //charge = Mathf.Pow((charge + 1f) / maxCharge, chargeIncreaseRate) * maxCharge;
-                Debug.Log("Charge: " + charge);
+                
             }
             
        
