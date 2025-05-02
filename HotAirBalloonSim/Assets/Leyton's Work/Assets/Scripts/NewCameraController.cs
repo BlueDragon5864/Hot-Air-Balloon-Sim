@@ -58,7 +58,7 @@ public class FirstPersonCameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Get the mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -76,7 +76,8 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Position the camera at the player's position
         //transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
-
+    }
+    void FixedUpdate() { 
         if (Input.GetMouseButton(1) && delay == 0)
         {
             
