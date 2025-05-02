@@ -22,9 +22,9 @@ public class Building : MonoBehaviour
 
          
         if (!destroyed && collision.gameObject.CompareTag("Bomb") ) {
-            
-            Destroy(collision.gameObject);
-            health -= 20;
+
+            collision.gameObject.GetComponent<Bomb>().Explode();
+            health -= 25;
         }
     }
 }

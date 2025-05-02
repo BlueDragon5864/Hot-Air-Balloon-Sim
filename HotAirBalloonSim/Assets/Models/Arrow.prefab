@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710725, y: -0, z: -0, w: 0.70710635}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 71.7, z: 2}
+  m_LocalScale: {x: 4, y: 143.4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3182853088599852446}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3182853088599852446}
   - component: {fileID: 2226381015820894101}
   - component: {fileID: 8868870288274428007}
-  - component: {fileID: 4003973411597101710}
+  - component: {fileID: -7812027858802875883}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Projectile
@@ -173,7 +173,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4003973411597101710
+--- !u!114 &-7812027858802875883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

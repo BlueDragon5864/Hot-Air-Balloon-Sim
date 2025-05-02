@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2469567131989075643}
   - component: {fileID: 3106900879827320952}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Fuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4984,6 +4984,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9550abd7eaa5b04eb04319d7708858e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionEffects:
+  - {fileID: 8617213364229538927}
+  - {fileID: 7887978822622790324}
+  - {fileID: 8232925020970856028}
+  - {fileID: 0}
+  fuse: {fileID: 2469567131989075643}
 --- !u!1001 &1505555041684973506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5036,22 +5042,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_Explosion
       objectReference: {fileID: 0}
-    - target: {fileID: 7165987540389389229, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7396590618824853918, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7783971407438624819, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760473961031148918, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5060,5 +5050,20 @@ PrefabInstance:
 --- !u!4 &3321595529274190132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4250381946494357238, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
+  m_PrefabInstance: {fileID: 1505555041684973506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7887978822622790324 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8760473961031148918, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
+  m_PrefabInstance: {fileID: 1505555041684973506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8232925020970856028 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7396590618824853918, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
+  m_PrefabInstance: {fileID: 1505555041684973506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8617213364229538927 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7165987540389389229, guid: 61610b2049216e54d956ba32fdd9edc1, type: 3}
   m_PrefabInstance: {fileID: 1505555041684973506}
   m_PrefabAsset: {fileID: 0}

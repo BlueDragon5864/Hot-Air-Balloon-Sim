@@ -681,7 +681,7 @@ MonoBehaviour:
   SpawnPoint: {fileID: 3130798331911195449}
   ProjectilePreFab: {fileID: 6238834537949739373, guid: 74c6574436e5da243acedc32f4b97df6, type: 3}
   fireForce: 140
-  fireRate: 300
+  fireRate: 105
   projectileParent: {fileID: 0}
 --- !u!95 &3674231044127751522
 Animator:

@@ -5,7 +5,7 @@ public class Projectile : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Debug.Log("Created");
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Balloon"))
+        if (!collision.gameObject.CompareTag("Balloon") && !collision.gameObject.CompareTag("Building"))
         {
             Destroy(gameObject);
         }
