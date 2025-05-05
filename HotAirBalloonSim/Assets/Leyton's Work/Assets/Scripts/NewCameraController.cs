@@ -76,6 +76,8 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Position the camera at the player's position
         //transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
+
+      
     }
     void FixedUpdate() { 
         if (Input.GetMouseButton(1) && delay == 0)
@@ -135,7 +137,7 @@ public class FirstPersonCameraController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + transform.forward * 0.5f, transform.forward * 5f, out hit))
         {
-            
+            Debug.Log(hit.collider.gameObject);
             if (hit.collider.gameObject == Flame || hit.collider.gameObject == Envelope)
             {
                 // Player is looking at the flame
