@@ -1432,7 +1432,7 @@ Transform:
   m_GameObject: {fileID: 4975925160040871627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.41, z: 0.439}
+  m_LocalPosition: {x: 0, y: 0.26, z: 0.979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   Weapon: {fileID: 2089991409758696933}
   SpawnPoint: {fileID: 4801260744014458930}
   ProjectilePreFab: {fileID: 7765285539324625072, guid: 5bf2bd2c5887dba46a2c3dc412030d4e, type: 3}
-  fireForce: 160
+  fireForce: 300
   fireRate: 90
   projectileParent: {fileID: 0}
 --- !u!95 &6948478318382909630

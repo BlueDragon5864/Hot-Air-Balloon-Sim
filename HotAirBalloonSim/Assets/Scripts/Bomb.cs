@@ -13,7 +13,10 @@ public class Bomb : MonoBehaviour
     {
 sound = GetComponent<AudioSource>();       
     }
-
+    private void Update()
+    {
+        
+    }
     public void Explode()
     {
         if (hasExploded) return;
