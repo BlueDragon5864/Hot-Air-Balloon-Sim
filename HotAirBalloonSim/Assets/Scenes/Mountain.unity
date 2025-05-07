@@ -1899,7 +1899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 32.61068, y: 0}
+  m_AnchoredPosition: {x: 1315, y: 751}
   m_SizeDelta: {x: 131.6534, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849810183
@@ -2350,6 +2350,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 957078157}
     - target: {fileID: 4029492115040542454, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
+      propertyPath: angle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029492115040542454, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
@@ -2361,6 +2365,14 @@ PrefabInstance:
       propertyPath: Envelope
       value: 
       objectReference: {fileID: 801072919}
+    - target: {fileID: 4029492115040542454, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
+      propertyPath: lineStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029492115040542454, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
+      propertyPath: resolution
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4029492115040542454, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
       propertyPath: throwDelay
       value: 20

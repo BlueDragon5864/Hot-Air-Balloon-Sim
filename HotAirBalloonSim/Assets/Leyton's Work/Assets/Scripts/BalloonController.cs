@@ -13,7 +13,7 @@ public class BalloonController : MonoBehaviour
     public float terminalVelocity;
     public float balloonEfficiency = 1f;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     public HeatBar heatBar;
 

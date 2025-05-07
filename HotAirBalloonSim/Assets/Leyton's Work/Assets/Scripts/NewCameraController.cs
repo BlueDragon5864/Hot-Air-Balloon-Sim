@@ -33,8 +33,34 @@ public class FirstPersonCameraController : MonoBehaviour
     private float yaw = 0f; // Yaw rotation
     private float pitch = 0f; // Pitch rotation
 
+    public LineRenderer lineRenderer;
+    public int resolution = 30; // Number of points in the trajectory
+    public float timeStep = 0.1f; // Simulation time step
+    public float angle = 0f; // Launch angle in degrees
+    public int lineStart = 0;
+    public float below = 0;
+    public float rightOffset = 2f;
+
+    void DrawTrajectory(float initialVelocity)
+    {
+        Vector3 startPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - below, Camera.main.transform.position.z) + Camera.main.transform.right * rightOffset;
+        Vector3 launchDirection = Quaternion.Euler(-angle, 0, 0) * Camera.main.transform.forward;
+        Vector3 velocity = launchDirection * initialVelocity + balloonController.rb.linearVelocity;
+        float gravity = Physics.gravity.y;
+
+        Vector3[] points = new Vector3[resolution];
+        for (int i = lineStart; i < resolution; i++)
+        {
+            float time = i * timeStep;
+            points[i] = startPos + velocity * time + 0.5f * new Vector3(0, gravity, 0) * time * time;
+        }
+
+        lineRenderer.positionCount = resolution;
+        lineRenderer.SetPositions(points);
+    }
     void Start()
     {
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
         // currentTarget = balloon;
         balloonController = balloon.GetComponent<BalloonController>();
         
@@ -104,7 +130,8 @@ public class FirstPersonCameraController : MonoBehaviour
        
             count++;
             charging = true;
-            
+
+            DrawTrajectory(charge + shootForce);
         }
         else if (charging)
         {
@@ -127,7 +154,9 @@ public class FirstPersonCameraController : MonoBehaviour
         {
             if (delay > 0) delay--;
         }
+
         
+
         CheckForInteraction();
     }
 
