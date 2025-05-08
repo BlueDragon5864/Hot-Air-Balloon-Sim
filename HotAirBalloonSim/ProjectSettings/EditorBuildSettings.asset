@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mountain.unity
     guid: e7875a7b6c72dc04086622eebdf23b3e
+  - enabled: 1
+    path: Assets/Scenes/DieScreen.unity
+    guid: 7c0922b38697b7d4aa680e734f067954
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: f2e56bca4bbbc25489695585c641ef79
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

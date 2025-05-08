@@ -8,6 +8,6 @@ public class PlayButton : MonoBehaviour
     {
         // Debug.Log("click" + (++clicks));
         // Add your button functionality here
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene("Mountain");
     }
 }

@@ -34,7 +34,7 @@ public class FirstPersonCameraController : MonoBehaviour
     private float pitch = 0f; // Pitch rotation
 
     public LineRenderer lineRenderer;
-    public int resolution = 30; // Number of points in the trajectory
+    public int resolution = 60; // Number of points in the trajectory
     public float timeStep = 0.1f; // Simulation time step
     public float angle = 0f; // Launch angle in degrees
     public int lineStart = 0;
@@ -61,6 +61,18 @@ public class FirstPersonCameraController : MonoBehaviour
     void Start()
     {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
+
+        lineRenderer.startWidth = 0.5f;
+        lineRenderer.endWidth = 0.5f;
+
+        Color translucentWhite = new Color(1f, 1f, 1f, 0.5f);
+        Color opaqueWhite = new Color(1f, 1f, 1f, 1f);
+
+        lineRenderer.startColor = translucentWhite;
+        lineRenderer.endColor = opaqueWhite;
+
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
         // currentTarget = balloon;
         balloonController = balloon.GetComponent<BalloonController>();
         
@@ -136,7 +148,7 @@ public class FirstPersonCameraController : MonoBehaviour
         else if (charging)
         {
             // Instantiate a new sphere object
-            GameObject sphere = Instantiate(bombPrefab, transform.position, transform.rotation);
+            GameObject sphere = Instantiate(bombPrefab, transform.position + Camera.main.transform.right * rightOffset, transform.rotation);
 
             //set bomb velocity the balloon velocity
             sphere.GetComponent<Rigidbody>().linearVelocity = balloon.GetComponent<Rigidbody>().linearVelocity;
@@ -149,6 +161,11 @@ public class FirstPersonCameraController : MonoBehaviour
             charging = false;
             handBomb.Play("Idle");
             delay = throwDelay;
+
+            if (lineRenderer != null)
+            {
+                lineRenderer.positionCount = 0;
+            }
         }
         else
         {

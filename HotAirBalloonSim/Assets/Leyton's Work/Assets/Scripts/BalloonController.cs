@@ -53,6 +53,9 @@ public class BalloonController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (depletionRate < -7f && collision.gameObject.CompareTag("Projectile")) depletionRate += 0.1f;
+        if (
+            // depletionRate < -7f && 
+            collision.gameObject.CompareTag("Projectile")
+            ) depletionRate += 0.1f;
     }
 }
