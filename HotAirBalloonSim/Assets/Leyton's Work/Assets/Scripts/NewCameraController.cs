@@ -60,6 +60,9 @@ public class FirstPersonCameraController : MonoBehaviour
     }
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         lineRenderer = gameObject.AddComponent<LineRenderer>();
 
         lineRenderer.startWidth = 0.5f;

@@ -3,6 +3,11 @@ using UnityEngine.UI; // Required for accessing the Button component
 using UnityEngine.SceneManagement;
 public class PlayButton : MonoBehaviour
 {
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+    }
     // private int clicks = 0;
     public void OnClick()
     {
