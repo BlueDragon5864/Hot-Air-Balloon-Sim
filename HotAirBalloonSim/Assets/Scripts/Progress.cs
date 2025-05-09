@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Progress : MonoBehaviour
 {
     GameObject[] buildings;
-    int destroyedBuildings;
+    float destroyedBuildings;
     public TMP_Text text;
     
     void Start()
@@ -27,6 +28,10 @@ public class Progress : MonoBehaviour
         if (destroyedBuildings != buildingCheck) {
             destroyedBuildings = buildingCheck;
         }
-        text.text = destroyedBuildings/buildings.Length + "% Destroyed";
+        
+        text.text = (int)( 100 - destroyedBuildings/buildings.Length * 100) + "% Destroyed";
+        if (destroyedBuildings == buildings.Length) {
+            SceneManager.LoadScene("WinScreen");
+        }
     }
 }
