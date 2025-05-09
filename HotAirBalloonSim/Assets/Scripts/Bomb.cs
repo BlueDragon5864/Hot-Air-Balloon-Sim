@@ -5,17 +5,21 @@ public class Bomb : MonoBehaviour
     public ParticleSystem[] explosionEffects;
     public ParticleSystem fuse;
 
+    private float creationTime;
+
     private bool hasExploded = false;
     public AudioClip explosionClip;
     AudioSource sound;
 
     void Start()
     {
+        creationTime = Time.time;
+
 sound = GetComponent<AudioSource>();       
     }
     private void Update()
     {
-        
+        if (Time.time - creationTime >= 10) Explode();
     }
     public void Explode()
     {
