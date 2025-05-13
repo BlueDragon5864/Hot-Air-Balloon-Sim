@@ -208,7 +208,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _NewColor1: {r: 0.78431374, g: 0, b: 0, a: 0}
-    - _NewColor2: {r: 0.74509805, g: 0.4313725, b: 0, a: 0.5529412}
+    - _NewColor2: {r: 0.74509805, g: 0.43137246, b: 0, a: 0}
     - _NewColor3: {r: 0.5490196, g: 0.31372547, b: 0, a: 0.65882355}
     - _NewColor4: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
     - _NewColor5: {r: 0, g: 1, b: 1, a: 0}
