@@ -2543,6 +2543,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8285396079136307690, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
+      propertyPath: far clip plane
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285396079136307690, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310967269587727589, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.331
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3229993182416482641, guid: 540086da82a538b478fb0234cb0a70bd, type: 3}
     m_RemovedGameObjects: []
