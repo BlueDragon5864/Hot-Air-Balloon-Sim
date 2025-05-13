@@ -10,6 +10,8 @@ public class PilotController : MonoBehaviour
     public bool canFly = false;
     public float lowBoundary = 0.0f;
     public Transform respawn;
+
+    public float northBound, southBound, eastBound, westBound;
     
     private Rigidbody rb;
     private Transform cameraTransform;
@@ -56,6 +58,22 @@ public class PilotController : MonoBehaviour
         cameraRight.y = 0f;
         cameraRight.Normalize();
         
+        if (transform.position.x > eastBound)
+        {
+            rb.AddForce(new Vector3(-10f, 0f, 0f), ForceMode.Impulse);
+        }
+        if (transform.position.z > northBound)
+        {
+            rb.AddForce(new Vector3(0f, 0f, -10f), ForceMode.Impulse);
+        }
+        if (transform.position.x < westBound)
+        {
+            rb.AddForce(new Vector3(10f, 0f, 0f), ForceMode.Impulse);
+        }
+        if (transform.position.z < southBound)
+        {
+            rb.AddForce(new Vector3(0f, 0f, 10f), ForceMode.Impulse);
+        }
     }
 
     private void LimitVelocity()
