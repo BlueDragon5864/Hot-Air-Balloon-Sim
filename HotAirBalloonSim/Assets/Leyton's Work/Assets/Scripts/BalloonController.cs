@@ -40,7 +40,7 @@ public class BalloonController : MonoBehaviour
 
         if (flameIntensity <= 0f) SceneManager.LoadScene("DieScreen");
 
-        if (transform.position.y > 650f) rb.linearVelocity = new Vector3(rb.linearVelocity.x, -10f, rb.linearVelocity.z);
+        if (transform.position.y > 700f) rb.linearVelocity = new Vector3(rb.linearVelocity.x, -10f, rb.linearVelocity.z);
         if (transform.position.y < 30f) rb.linearVelocity = new Vector3(rb.linearVelocity.x, 10f, rb.linearVelocity.z);
     }
 

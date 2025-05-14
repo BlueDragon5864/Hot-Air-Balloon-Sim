@@ -5,7 +5,7 @@ public class PlayButton : MonoBehaviour
 {
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
     // private int clicks = 0;
