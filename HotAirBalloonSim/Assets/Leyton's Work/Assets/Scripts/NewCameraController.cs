@@ -41,6 +41,7 @@ public class FirstPersonCameraController : MonoBehaviour
     public float below = 0;
     public float rightOffset = 2f;
 
+    public AudioSource fan;
     void DrawTrajectory(float initialVelocity)
     {
         Vector3 startPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - below, Camera.main.transform.position.z) + Camera.main.transform.right * rightOffset;
@@ -195,6 +196,7 @@ public class FirstPersonCameraController : MonoBehaviour
                     // Increase the flame's intensity
                     balloonController.UpdateFlameIntensity();
                     leaf.Play("fan");
+                    fan.Play();
                 }
             }
             
