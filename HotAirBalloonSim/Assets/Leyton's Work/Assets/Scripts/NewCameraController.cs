@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class FirstPersonCameraController : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class FirstPersonCameraController : MonoBehaviour
     public float rightOffset = 2f;
 
     public AudioSource fan;
+    
     void DrawTrajectory(float initialVelocity)
     {
         Vector3 startPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - below, Camera.main.transform.position.z) + Camera.main.transform.right * rightOffset;
@@ -118,8 +120,9 @@ public class FirstPersonCameraController : MonoBehaviour
 
         // Position the camera at the player's position
         //transform.position = new Vector3(player.position.x, player.position.y + headHeight, player.position.z);
+        CheckForInteraction();
 
-      
+
     }
     void FixedUpdate() { 
         if (Input.GetMouseButton(1) && delay == 0)
@@ -178,8 +181,9 @@ public class FirstPersonCameraController : MonoBehaviour
 
         
 
-        CheckForInteraction();
+        
     }
+    
 
     void CheckForInteraction()
     {
@@ -190,6 +194,7 @@ public class FirstPersonCameraController : MonoBehaviour
             
             if (hit.collider.gameObject == Flame || hit.collider.gameObject == Envelope)
             {
+                
                 // Player is looking at the flame
                 if (Input.GetMouseButtonDown(0))
                 {

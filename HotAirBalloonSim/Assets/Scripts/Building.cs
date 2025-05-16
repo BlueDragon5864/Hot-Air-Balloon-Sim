@@ -14,6 +14,7 @@ public class Building : MonoBehaviour
     {
         
         source = gameObject.GetComponent<AudioSource>();
+        
         source.playOnAwake = false;
         source.clip = clip;
     }

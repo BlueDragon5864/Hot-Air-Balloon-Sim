@@ -8,7 +8,7 @@ public class AttackBuilding : Building
     
     public float fireForce;
     public float fireRate;
-
+    public AudioSource firesound;
     public Transform projectileParent;
 
    
@@ -39,6 +39,7 @@ public class AttackBuilding : Building
             {
                 CreateProjectile();
                 animator.Play("Fire");
+                firesound.Play();
             }
 
         }

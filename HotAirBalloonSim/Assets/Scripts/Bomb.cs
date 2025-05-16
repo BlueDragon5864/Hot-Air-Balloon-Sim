@@ -19,7 +19,7 @@ sound = GetComponent<AudioSource>();
     }
     private void Update()
     {
-        if (Time.time - creationTime >= 10) Explode();
+        if (Time.time - creationTime >= 10) Destroy(gameObject);
     }
     public void Explode()
     {
